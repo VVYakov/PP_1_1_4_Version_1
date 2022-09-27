@@ -3,37 +3,18 @@ package jm.task.core.jdbc.util;
 import jm.task.core.jdbc.model.User;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import org.hibernate.cfg.Configuration;
-import org.hibernate.cfg.Environment;
-import org.hibernate.service.ServiceRegistry;
-import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Properties;
+
+// import java.sql.Connection;
+// import java.sql.DriverManager;
+// import java.sql.SQLException;
+
+
 
 public class Util {
-
-    private static final String URL = "jdbc:mysql://localhost:3306/MydbTestKata";
-    private static final String USERNAME = "root";
-    private static final String PASSWORD = "rootroot";
-
-    public Connection getConnection() {
-        Connection connection = null;
-        try {
-            connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return connection;
-    }
-
 
     private static StandardServiceRegistry registry;
     private static SessionFactory sessionFactory;
@@ -68,5 +49,20 @@ public class Util {
         }
         return sessionFactory;
     }
+
+    /*   private static final String URL = "jdbc:mysql://localhost:3306/MydbTestKata";
+    private static final String USERNAME = "root";
+    private static final String PASSWORD = "rootroot";
+
+    public Connection getConnection() {
+        Connection connection = null;
+        try {
+            connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return connection;
+    }
+*/
 }
 
